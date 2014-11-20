@@ -1,0 +1,222 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+@import "susy";
+@import "breakpoint";
+@import "variables/**/*";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@include border-box-sizing;
+
+
+//@include susy-breakpoint(46em, $large) {
+  // nested code uses an 8-column grid,
+  // starting at a 30em min-width breakpoint...
+  body{
+    @include container(12);
+    //@include show-grid(overlay);
+    background-color: #f2f2f2;
+  }
+  header{
+    @include span(12 of 12);
+    background-color: #1c9a96;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+    .logo em{
+	    font-size: 13px;
+	    font-weight: normal;
+	    font-style: oblique;
+	    text-transform: uppercase;
+    }
+  }
+  .main-content{
+    @include span(12 of 12);
+    background-color: #313131;
+    .main-content-inner{
+      //@include container(10);
+      @include span(isolate 10 of 12 at 2);
+      background-color: #313131;
+      color: #FFFFFF;
+      padding: 40px 0;
+      .form-wrapper{
+	      clear: both;
+	      .select-container{
+		      @include span(isolate 4 of 12 at 5);
+	      }
+      }
+    }
+  }
+  footer{
+    @include span(12 of 12);
+    background-color: #8899aa;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+  }
+  form.query-form{
+    .form-inner{
+      background-color: #414141;
+      padding: 10px 0;
+      overflow: hidden;
+      @include span(isolate 10 of 12 at 2);
+      text-align: center;
+      .submit-wrapper{
+        clear: both;
+        font-size: 0.8em;
+        min-width: 300px;
+        margin: auto;
+        margin-top: 20px;
+        float: right;
+        height: 50px;
+        overflow: hidden;
+        input, .reset-button a{
+          display: block;
+		  float: left;
+		  height: 35px;
+		  line-height: 35px;
+		  margin: 0 10px;
+		  padding: 0;
+		  text-align: center;
+		  width: 110px;
+        }
+      }
+      label{
+        text-align: center;
+        display: block;
+      }
+      input{
+         @include span(isolate 10 of 12 at 2);
+        // @include gutters(10 split);
+        text-align: center;
+        font-size: 10px;
+        padding: 10px;
+        min-height: 20px;
+      }
+      .example-text{
+        color: #9a9a9a;
+        font-style: oblique;
+        font-size: 1em;
+        clear: both;
+        display: block;
+      }
+    }
+  }
+  form{
+    @include container(12);
+   // @include show-grid(overlay);
+    border: none;
+    margin: 0 0 10px;
+    .views-exposed-widgets{
+      background-color: #414141;
+      padding: 4px 0;
+      overflow: hidden;
+      @include span(isolate 10 of 12 at 2);
+      > *{
+        @include span(3 of 12);
+        @include gutters(10 inside);
+        margin: 0 4px 10px;
+        overflow: hidden;
+        border: 1px solid #292929;
+        background-color: #313131;
+        text-align: center;
+      }
+      > .views-widget-filter-nid {
+      	@include span(isolate 2 of 12 at 6);
+	    border: 1px solid #252525;
+	    clear: both;
+	    display: block;
+	    //float: none;
+	    //margin: 20px auto;
+	    width: 150px;
+	  }
+      > .views-submit-button{
+        clear: both;
+        float:none;
+        border:none;
+        background-color: #313131;
+        margin: 2px auto;
+        padding: 2px;
+        width: 130px;
+        text-align: center;
+        height: auto;
+      }
+    }
+    input, textarea, select{
+      margin: 10px 0;
+      width: 100%;
+      display: block;
+      color: #212121;
+      text-align: left;
+    }
+    select{
+      font-size: 0.9em;
+      height: auto;
+      option{
+        margin: 5px 0;
+        padding: 5px;
+      }
+    }
+      .form-text{
+        box-shadow: none;
+        border:1px solid #0b708e;
+        padding: 5px;
+      }
+      .form-submit, .button{
+        background-color: #0b708e;
+        color: #FFFFFF;
+        text-transform: uppercase;
+        font-size: 0.8em;
+        border-radius: 0;
+        border:1px solid #FFFFFF;
+        padding: 7px 20px 6px;
+        margin: 0;
+        text-align: center;
+        display: block;
+      }
+      .form-submit:hover, .button:hover{
+	      background-color: #11657f;
+	      text-decoration: none;
+      }
+      .form-submit:active, .button:active{
+	      background-color: #125b71;
+      }
+      .sorting-wrapper{
+	      clear: both;
+	      float: none;
+	      width: 450px;
+	      margin: auto;
+      }
+      .pager-wrapper, .results-num-wrapper{
+		  margin: 20px 10px;
+		  text-align: center;
+		  float: left;
+		  width: 194px;
+       }
+	  .pager-wrapper select, .results-num-wrapper select{
+		  width: 100px;
+		  margin: 10px auto 20px;
+	  }
+  }
+  #querytext{
+    background-color: #FFFFFF;
+    min-height: 200px;
+    max-height: 450px;
+    overflow-y: scroll;
+    display: block;
+    clear: both;
+    margin: 0 auto;
+    width: 75%;
+    border-radius: 5px;
+    text-align: left;
+    padding: 20px;
+    display: none;
+    font-size: 10px;
+  }
+
+//}

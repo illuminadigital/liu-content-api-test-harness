@@ -1,0 +1,22 @@
+$susy: (
+  columns: 12,
+  gutters: 1/4,
+  math: fluid,
+  output: float,
+  gutter-position: outside,
+);
+$small: (
+  columns: 6,
+  gutter-position: split,
+  gutters: 1/4,
+);
+$medium: (
+  columns: 8,
+  gutter-position: split,
+  gutters: 1/4,
+);
+$large: (
+  columns: 12,
+  gutter-position: outside,
+  gutters: 1/4,
+);
